@@ -1,27 +1,32 @@
-# FrontendModelsisAngularFullstack
+# Bienvenue dans notre Projet FrontendModelsisAngularFullstack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+Ce projet Frontend Angular est conçu pour vous permettre de gérer facilement une liste de produits et de types de produits. Il offre une interface utilisateur conviviale pour afficher, ajouter, modifier et supprimer des produits, ainsi que pour gérer les types de produits associés.
 
-## Development server
+# Fonctionnalités clés :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   -- Liste des Produits : Visualisez la liste complète de tous les produits disponibles, y compris leur nom, date de création et type associé.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    -- Ajout de Produits : Ajoutez de nouveaux produits à la base de données avec des informations complètes.
 
-## Build
+    -- Modification de Produits : Modifiez les détails des produits existants si nécessaire.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    -- Suppression de Produits : Supprimez les produits qui ne sont plus nécessaires.
 
-## Running unit tests
+    -- Gestion des Types de Produits : Créez les différents types de produits auxquels les produits peuvent être associés.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ce projet met en œuvre une relation OneToMany entre les types de produits et les produits, ce qui signifie qu'un type de produit peut être associé à plusieurs produits.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Stack Utilisé:
 
-## Further help
+--Angular 16.2.2
+--Node 18.17.1
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Comment executer ce projet
+
+-- Executer d'abord `npm install` pour installer toutes les dependances
+
+-- Exécutez `ng serve` pour lancer un serveur de développement. Accédez à `http://localhost:4200/`. .
+
+

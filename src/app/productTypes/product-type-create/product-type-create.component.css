@@ -1,0 +1,18 @@
+.vertical-align-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+h1{
+    text-align: center;
+}
+.global{
+    padding: 10%;
+}
+.card{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #dfe3e4;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}

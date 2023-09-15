@@ -1,0 +1,15 @@
+#edit{
+    color: rgb(29, 190, 29);
+}
+#delete{
+    color: rgb(178, 41, 7);
+}
+#divButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+h1{
+    text-align: center;
+}

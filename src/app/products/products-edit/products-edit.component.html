@@ -1,0 +1,29 @@
+<div class="global">
+  <h1>Update Product </h1>
+  <mat-card class="card">
+  <mat-card-header>Product </mat-card-header>
+  <div class="vertical-align-container">
+    <mat-card-content>
+    <form (ngSubmit)="updateProduct()" class="mat-form">
+      <mat-form-field class="mat-form-field">
+        <mat-label class="mat-label">Product Name</mat-label>
+        <input matInput [(ngModel)]="product.productName" name="productName" required class="mat-input">
+      </mat-form-field><br>
+      <mat-form-field class="mat-form-field" aria-required="true">
+        <mat-label class="mat-label">Product Type</mat-label>
+        <mat-select [(ngModel)]="product.productType" name="product.productType" class="mat-select" required>
+          <mat-option *ngFor="let productType of productTypes" [value]="productType.productTypeID"  required>
+            {{ productType.productTypeName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <button routerLink="/index.html" mat-raised-button class="mat-button" color="primary">Cancel</button>&nbsp;&nbsp;
+      <button type="submit" mat-raised-button class="mat-button" color="primary">Save</button>
+    </form>
+    </mat-card-content>
+  </div>
+  
+  </mat-card>
+  </div>
+  <router-outlet></router-outlet>
+  
