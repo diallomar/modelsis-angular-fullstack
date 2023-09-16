@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/products.services';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProductType } from '../../model/Products.model';
+import { InfoProduct, Product, ProductType } from '../../model/Products.model';
 import { ProductTypeService } from '../../services/productType.services';
 @Component({
   selector: 'app-products-create',
@@ -9,9 +9,10 @@ import { ProductTypeService } from '../../services/productType.services';
   styleUrls: ['./products-create.component.css']
 })
 export class ProductsCreateComponent {
-  product: any = {};
+  product = new Product();
+  infoProduct = new InfoProduct()
   productTypes: ProductType[] = [];
-
+  
   constructor(private productService: ProductService, 
     private productTypeService: ProductTypeService,
     private route: ActivatedRoute,
@@ -21,10 +22,16 @@ export class ProductsCreateComponent {
       this.loadProductTypes();
     }
   createProduct(): void {
-    this.productService.create({idProductType:this.product.productType, productName:this.product.productName}).subscribe(() => {
-      this.router.navigate(['/index.html']);
-      
-    });
+    if (this.infoProduct.idProductType && this.infoProduct.productName) {
+      this.productService.create(this.infoProduct).subscribe(() => {
+        this.router.navigate(['/index.html']);
+      },(error=>{
+        alert("Une erreur s'est produite. Assurer vous que ce produit n'exite pas !")
+      }));
+    }else{
+      alert("le nom du produit et le type ne doivent pas être nulls");
+    }
+    
   }
 
   loadProductTypes(): void {

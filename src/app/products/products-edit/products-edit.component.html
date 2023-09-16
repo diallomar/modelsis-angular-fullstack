@@ -12,7 +12,7 @@
       <mat-form-field class="mat-form-field" aria-required="true">
         <mat-label class="mat-label">Product Type</mat-label>
         <mat-select [(ngModel)]="product.productType" name="product.productType" class="mat-select" required>
-          <mat-option *ngFor="let productType of productTypes" [value]="productType.productTypeID"  required>
+          <mat-option *ngFor="let productType of productTypes" [value]="productType"  required>
             {{ productType.productTypeName }}
           </mat-option>
         </mat-select>

@@ -25,12 +25,12 @@ export class LoginComponent {
   login(): void {
     this.authService.login({ username: this.user.username, password: this.user.password }).subscribe(
       (response) => {
-      
+
         this.user1 = response;
         console.log(this.user1)
-        if (response != null ) {
+        if (response != null) {
           this.router.navigate(['/index.html']);
-          localStorage.setItem('user',response);
+          localStorage.setItem('user', response);
         } else {
           alert("Username ou Mot de passe incorrect")
         }
@@ -43,7 +43,7 @@ export class LoginComponent {
     );
   }
 
-  logout(): void{
+  logout(): void {
     localStorage.clear();
     this.router.navigate(['/index.html']);
   }

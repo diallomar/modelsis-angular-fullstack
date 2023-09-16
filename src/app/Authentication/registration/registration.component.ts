@@ -19,8 +19,13 @@ export class RegistrationComponent {
 
   signUp(): void{
     if (this.user.password == this.confirmation) {
-      this.authService.signUp(this.user).subscribe(()=>{
-        this.router.navigate(['/login'])}, (error) => {
+      this.authService.signUp(this.user).subscribe((response)=>{
+        if (response.userID == null) {
+          alert('cet utilisateur existe déjà. Veuillez utiliser un autre')
+        } else {
+          this.router.navigate(['/login'])
+        }
+        }, (error) => {
           alert("Ce nom d'utilisateur existe déjà.\n veuillez utiliser un autre SVP!")
         })
     }else{

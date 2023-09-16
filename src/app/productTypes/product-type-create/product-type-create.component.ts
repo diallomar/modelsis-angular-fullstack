@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductType } from 'src/app/model/Products.model';
 import { ProductTypeService } from 'src/app/services/productType.services';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductTypeService } from 'src/app/services/productType.services';
 })
 export class ProductTypeCreateComponent {
 
-  productType: any = {};
+  productType = new ProductType();
   
 
   constructor(private productTypeService: ProductTypeService, 

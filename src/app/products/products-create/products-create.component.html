@@ -7,11 +7,11 @@
   <form (ngSubmit)="createProduct()" class="mat-form">
     <mat-form-field class="mat-form-field">
       <mat-label class="mat-label">Product Name</mat-label>
-      <input matInput [(ngModel)]="product.productName" name="productName" required class="mat-input">
+      <input matInput [(ngModel)]="infoProduct.productName" name="productName" required class="mat-input">
     </mat-form-field><br>
     <mat-form-field class="mat-form-field" aria-required="true">
       <mat-label class="mat-label">Product Type</mat-label>
-      <mat-select [(ngModel)]="product.productType" name="product.productType" class="mat-select" required>
+      <mat-select [(ngModel)]="infoProduct.idProductType" name="infoProduct.idProductType" class="mat-select" required>
         <mat-option *ngFor="let productType of productTypes" [value]="productType.productTypeID"  required>
           {{ productType.productTypeName }}
         </mat-option>

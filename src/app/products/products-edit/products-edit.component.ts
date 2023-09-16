@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/products.services';
 import { ProductTypeService } from '../../services/productType.services';
-import { ProductType } from '../../model/Products.model';
+import { InfoProduct, Product, ProductType } from '../../model/Products.model';
 
 @Component({
   selector: 'app-products-edit',
@@ -10,8 +10,10 @@ import { ProductType } from '../../model/Products.model';
   styleUrls: ['./products-edit.component.css']
 })
 export class ProductsEditComponent implements OnInit{
-  product: any = {};
+  product = new Product();
+  infoProduct = new InfoProduct()
   productTypes: ProductType[] = [];
+
   constructor(
     private productTypeService: ProductTypeService,
     private route: ActivatedRoute,
@@ -28,9 +30,12 @@ export class ProductsEditComponent implements OnInit{
   }
   
   updateProduct(): void {
-    this.productService.update(this.product.productID, {idProductType:this.product.productType, productName:this.product.productName}).subscribe(() => {
+  
+    this.infoProduct.idProductType = this.product.productType.productTypeID
+    this.infoProduct.productName = this.product.productName
+
+    this.productService.update(this.product.productID, this.infoProduct).subscribe(() => {
       this.router.navigate(['/index.html']);
-      console.log({idProductType:this.product.productType, productName:this.product.productName})
     });
   }
 
